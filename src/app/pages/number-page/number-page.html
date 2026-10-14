@@ -1,1 +1,30 @@
-<p>number-page works!</p>,
+<section class="mb-3">
+    <h1 class="text-3xl font-bold mb-2">Pipes numericos</h1>
+
+</section>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow-sm w-full bg-base-200">
+    <div class="stat place-items-center">
+        <div class="stat-title">Number</div><!--1.0-0 sin decimales-->
+        <div class="stat-value">{{totalSells() | number : "1.2-2"}}</div><!--decimales 2 -->
+        <div class="stat-desc">{{totalSells()}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+        <div class="stat-title">Number:"1.2-2"</div>
+        <div class="stat-value text-secondary">{{totalSells() | number : "1.2-2"}}</div>
+        <div class="stat-desc text-secondary">{{totalSells()}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+        <div class="stat-title">currency</div><!--CAD es el codigo de moneda,Symbol-narrow es el simbolo-->
+        <div class="stat-value">{{totalSells() | currency:"CAD" :"symbol-narrow" :"1.4-4"}}</div>
+        <div class="stat-desc">{{totalSells()}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+        <div class="stat-title">Porcentaje</div><!-- este es el porcentaje por defecto -->
+        <div class="stat-value">{{porcentaje() | percent:"1.2-2"}}</div>
+        <div class="stat-desc">{{porcentaje()}}</div>
+    </div>
+</div>
