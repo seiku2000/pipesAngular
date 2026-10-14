@@ -1,0 +1,24 @@
+<section class="mb-3">
+    <h1 class="text-3xl font-bold mb-2">Pipes basicos</h1>
+
+</section>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow-sm w-full bg-base-200 ">
+    <div class="stat flex flex-col items-center justify-center">
+        <div class="stat-title">Lower case Pipe</div>
+        <div class="stat-value">{{nameUpper() | lowercase}}</div>
+        <div class="stat-desc">{{nameLower() }}</div>
+    </div>
+
+    <div class="stat flex flex-col items-center justify-center">
+        <div class="stat-title">Upper Case Pipe</div>
+        <div class="stat-value">{{nameLower() | uppercase}}</div>
+        <div class="stat-desc">{{nameUpper() | lowercase}}</div>
+    </div>
+
+    <div class="stat flex flex-col items-center justify-center">
+        <div class="stat-title">titleCase Pipe </div>
+        <div class="stat-value">{{fullname() | titlecase}}</div>
+        <div class="stat-desc">{{fullname() | lowercase}}</div>
+    </div>
+</div>
