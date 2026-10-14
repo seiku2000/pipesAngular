@@ -22,3 +22,70 @@
         <div class="stat-desc">{{fullname() | lowercase}}</div>
     </div>
 </div>
+
+<div class="divider"></div>
+
+<section class="mb-3">
+    <h1 class="text-3xl font-bold mb-2">Fechas:</h1>
+
+</section>
+
+
+<div class="stats stats-vertical lg:stats-horizontal shadow-sm w-full bg-base-200">
+    <div class="stat place-items-center">
+        <div class="stat-title">Date PIpe</div><!--1.0-0 sin decimales-->
+        <div class="stat-value">{{customDate() | date}}</div><!--decimales 2 -->
+        <div class="stat-desc">{{customDate() | date:'long'}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+        <div class="stat-title">Date | Long | GMT-6</div><!--long es la fecha completa y GMT-5 es la zona horaria-->
+        <div class="stat-value text-secondary">{{customDate() | date:'short' : 'GMT-5'}}</div>
+        <!--fecha corta y zona horaria GMT-5-->
+        <div class="stat-desc text-secondary">{{customDate() | date:'shortDate'}}</div>
+    </div>
+
+
+
+</div>
+
+<div class="stats stats-vertical lg:stats-horizontal shadow-sm w-full bg-base-200 mt-2">
+    <div class="stat place-items-center">
+        <div class="stat-title">time PIpe</div><!--1.0-0 sin decimales-->
+        <div class="stat-value">{{customDate() | date:'mediumTime'}}</div><!--decimales 2 -->
+        <div class="stat-desc">{{customDate() | date:'shortTime'}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+        <div class="stat-title">date | mediumDate | fullDate</div>
+        <!--long es la fecha completa y GMT-5 es la zona horaria-->
+        <div class="stat-value text-secondary">{{customDate() | date:'mediumDate'}}</div>
+        <!--fecha corta y zona horaria GMT-5-->
+        <div class="stat-desc text-secondary">{{customDate() | date:'fullDate'}}</div>
+    </div>
+</div>
+
+
+<div class="stats stats-vertical lg:stats-horizontal shadow-sm w-full bg-base-200 mt-2">
+    <div class="stat place-items-center">
+        <div class="stat-title">date personalizado</div><!--1.0-0 sin decimales-->
+        <div class="stat-value">{{customDate() | date:'dd/MM/yyyy'}}</div><!--decimales 2 -->
+        <div class="stat-desc">{{customDate() | date:'MMMM dd, yyyy'}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+        <div class="stat-title">time personalizado</div>
+        <!--long es la fecha completa y GMT-5 es la zona horaria-->
+        <div class="stat-value text-secondary">{{customDate() | date:'HH:mm:ss'}}</div>
+        <!--fecha corta y zona horaria GMT-5-->
+        <div class="stat-desc text-secondary">{{customDate() | date:'h:m:s a'}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+        <div class="stat-title">Date time</div>
+        <!--long es la fecha completa y GMT-5 es la zona horaria-->
+        <div class="stat-value text-secondary">{{customDate() | date:'EEEE, MMMM dd, yyyy'}}</div>
+        <!--fecha corta y zona horaria GMT-5-->
+        <div class="stat-desc text-secondary">{{customDate() | date:'MMM dd, yyyy h:m:s a'}}</div>
+    </div>
+</div>
