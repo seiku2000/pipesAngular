@@ -13,16 +13,19 @@ export const routes: Routes = [
         title: 'Numbers PIpes',
         loadComponent: () => import('./pages/number-page/number-page'),
     },
+
     {
         path: 'uncommon',
-        title: 'Uncommon Ppes',
+        title: 'Pipes no tan comunes',
         loadComponent: () => import('./pages/uncommon-page/uncommon-page'),
     },
     {
         path: 'custom',
-        title: 'Pipes no tan comunes',
+        title: 'Pipes personalizados',
         loadComponent: () => import('./pages/custom-page/custom-page'),
     },
+
+
     {
         path: '**',
         redirectTo: 'basic',

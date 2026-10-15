@@ -17,8 +17,8 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     {
       provide: LOCALE_ID,//Se encarga de manejar el idioma
-      deps: [LocaleService],
-      useFactory: (localeService: LocaleService) => localeService.getcurrentLocale
+      deps: [LocaleService],//se encarga de que se pueda usar el servicio
+      useFactory: (localeService: LocaleService) => localeService.getcurrentLocale//se encarga de obtener el idioma actual
 
 
     }
