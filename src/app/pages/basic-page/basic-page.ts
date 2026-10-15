@@ -4,6 +4,12 @@ import { languageOptions, LocaleService } from '../../services/local.service';
 
 @Component({
   selector: 'app-basic-page',
+  /**
+   * 1. LowerCasePipe es para convertir texto a minusculas
+   * 2. UpperCasePipe es para convertir texto a mayusculas
+   * 3. TitleCasePipe es para convertir la primera letra de cada palabra a mayusculas y el resto a minusculas
+   * 4. DatePipe es para formatear fechas
+   */
   imports: [LowerCasePipe, UpperCasePipe, TitleCasePipe, DatePipe],
   templateUrl: './basic-page.html',
 })
