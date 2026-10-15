@@ -1,1 +1,21 @@
-<p>uncommon-page works!</p>,
+<section class="mb-3">
+    <h1 class="text-3xl font-bold mb-2">Pipes no tan comunes</h1>
+
+</section>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+    <app-card title="i18nSelectPipe">
+        <!-- 
+            el i18nSelect es para trabajar con diferentes cambios como pais ,genero etc
+            y toma el valor de la propiedad gender para mostrar el saludo correspondiente
+            recibe dos argumentos:
+            1. la propiedad que se va a evaluar
+            2. el mapa de valores que se va a utilizar
+        -->
+        <p>Saludos:<strong class="font-bold text-primary">{{client().name}}</strong> saludos es un placer
+            {{client().gender | i18nSelect:intitacionMap}}</p><!--sin necesidad usar if o ?-->
+        <button (click)="onChangedClient()" class="btn btn-primary">Click me</button>
+    </app-card>
+
+</div>
