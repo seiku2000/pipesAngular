@@ -3,7 +3,7 @@
 
 </section>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
     <app-card title="i18nSelectPipe">
         <!-- 
@@ -15,7 +15,17 @@
         -->
         <p>Saludos:<strong class="font-bold text-primary">{{client().name}}</strong> saludos es un placer
             {{client().gender | i18nSelect:intitacionMap}}</p><!--sin necesidad usar if o ?-->
-        <button (click)="onChangedClient()" class="btn btn-primary">Click me</button>
+        <button (click)="onChangedClient()" class="btn btn-primary">Click me</button><!--cambia el mensaje-->
+    </app-card>
+
+
+
+    <app-card title="i18nPluralPipe">
+        <!--i18nPlural es mas como un condicional en base a la cantidad de elementos que hay-->
+        <p>{{changedMessage()}} {{clients().length | i18nPlural:clientsMap()}}</p>
+        <!--depende de la cantidad de elementos-->
+        <button [disabled]="isHavingClients()" (click)="deleteClient()" class="btn btn-primary">Click me</button>
+        <!--si no hay nadie en la lista no se puede presionar el boton-->
     </app-card>
 
 </div>
