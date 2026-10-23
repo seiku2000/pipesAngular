@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
 import { CardComponent } from "../../components/card.component/card.component";
-import { I18nPluralPipe, I18nSelectPipe, JsonPipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
-
+import { I18nPluralPipe, I18nSelectPipe, JsonPipe, KeyValuePipe, LowerCasePipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { initFlowbite } from 'flowbite';
 
 const client1 = {
   name: 'sma',
@@ -29,13 +29,17 @@ const client2 = {
    * y el SlicePipe :nos ayuda a cortar un array o string
    */
 
-  imports: [CardComponent, I18nSelectPipe, I18nPluralPipe, SlicePipe, JsonPipe, UpperCasePipe, TitleCasePipe],
+  imports: [CardComponent, I18nSelectPipe, I18nPluralPipe, SlicePipe, JsonPipe, UpperCasePipe, TitleCasePipe, KeyValuePipe, LowerCasePipe],
   templateUrl: './uncommon-page.html',
   changeDetection: ChangeDetectionStrategy.Eager,
 })
-export default class UncommonPage {
+export default class UncommonPage implements OnInit {
 
   public client = signal(client1);
+
+  ngOnInit(): void {
+    initFlowbite()
+  }
 
 
   //I18nSelectPipe recibe un mapa de valores que se va a utilizar 
@@ -75,7 +79,14 @@ export default class UncommonPage {
     '=2': 'dos invitados esperando',
     other: 'tenemos # invitados esperando'
 
-  })
+  });
+
+  public profile = signal({
+    name: 'Samarth',
+    age: 22,
+    email: 'samarth@gmail.com',
+    addres: 'Gondia'
+  });
 
 
 

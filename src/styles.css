@@ -5,3 +5,6 @@
 @plugin 'daisyui' {
   themes: dracula --default;
 }
+
+@plugin 'flowbite/plugin';
+@source '../node_modules/flowbite';

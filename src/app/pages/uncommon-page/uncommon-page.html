@@ -68,4 +68,22 @@
 
     </app-card>
 
+
+    <app-card title="KeyValuePipe">
+        <!--Encadenamiento de pipes |         <p>{{profile() | keyvalue | json}}</p> -->
+        <ul aria-label="Información del perfil"
+            class="w-full text-sm font-medium bg-base-100 border border-base-300 rounded-xl divide-y divide-base-300 shadow-sm overflow-hidden">
+            <!-- El 'keyvalue' pipe permite iterar sobre las propiedades clave/valor de un objeto -->
+            @for (item of profile() | keyvalue; track item.key) {
+            <li class="flex items-center justify-between px-4 py-2.5 hover:bg-base-200/50 transition-colors">
+                <span class="font-semibold text-primary">{{ item.key | titlecase}}</span>
+                <span class="text-base-content select-all font-mono text-xs">{{ item.value }}</span>
+            </li>
+            }
+        </ul>
+
+
+
+    </app-card>
+
 </div>
