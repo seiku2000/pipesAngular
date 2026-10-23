@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { CardComponent } from "../../components/card.component/card.component";
-import { I18nPluralPipe, I18nSelectPipe, SlicePipe } from '@angular/common';
+import { I18nPluralPipe, I18nSelectPipe, JsonPipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 
 
 const client1 = {
@@ -29,7 +29,7 @@ const client2 = {
    * y el SlicePipe :nos ayuda a cortar un array o string
    */
 
-  imports: [CardComponent, I18nSelectPipe, I18nPluralPipe, SlicePipe],
+  imports: [CardComponent, I18nSelectPipe, I18nPluralPipe, SlicePipe, JsonPipe, UpperCasePipe, TitleCasePipe],
   templateUrl: './uncommon-page.html',
   changeDetection: ChangeDetectionStrategy.Eager,
 })
