@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { CardComponent } from "../../components/card.component/card.component";
-import { I18nPluralPipe, I18nSelectPipe } from '@angular/common';
+import { I18nPluralPipe, I18nSelectPipe, SlicePipe } from '@angular/common';
 
 
 const client1 = {
@@ -23,7 +23,13 @@ const client2 = {
   //el i18nSelect es para trabajar con diferentes cambios como pais ,genero etc
   //El  I18nSelectPipe es para mostrar un mensaje basado en una condicion 
 
-  imports: [CardComponent, I18nSelectPipe, I18nPluralPipe],
+  /**
+   * I18nSelectPipe :nos ayuda a obtener un valor basado en una condicion ,
+   * el  I18nPluralPipe :nos ayuda a obtener un valor basado en la cantidad de elementos
+   * y el SlicePipe :nos ayuda a cortar un array o string
+   */
+
+  imports: [CardComponent, I18nSelectPipe, I18nPluralPipe, SlicePipe],
   templateUrl: './uncommon-page.html',
   changeDetection: ChangeDetectionStrategy.Eager,
 })

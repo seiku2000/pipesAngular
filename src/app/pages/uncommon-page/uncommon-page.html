@@ -28,4 +28,33 @@
         <!--si no hay nadie en la lista no se puede presionar el boton-->
     </app-card>
 
+
+    <app-card title="SlicePipe">
+        <div class="overflow-hidden break-all">
+            <b>Originak</b>
+            <p class="text-primary text-xl">{{clients()}}</p>
+        </div>
+
+        <!--los slice nos sirve para trabajar con los indices de un array cortar  desde  el primer numero al segundo-->
+        <div class="overflow-hidden break-all">
+            <b>Slice de 0 a 2</b>
+            <p class="text-primary text-xl">{{clients() | slice:0:2}}</p>
+        </div>
+
+        <div class="overflow-hidden break-all">
+            <b>slice del 1 al 2</b>
+            <p class="text-primary text-xl">{{clients() | slice:1:2}}</p>
+        </div>
+
+        <div class="overflow-hidden break-all">
+            <b>slice del 3 al 4</b>
+            <p class="text-primary text-xl">{{clients() | slice:3:4}}</p>
+        </div>
+
+        <div class="overflow-hidden break-all">
+            <b>slice del 0 al -2</b>
+            <p class="text-primary text-xl">{{clients() | slice:0:-2}}</p>
+        </div>
+    </app-card>
+
 </div>
