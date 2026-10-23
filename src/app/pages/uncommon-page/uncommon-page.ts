@@ -29,7 +29,7 @@ const client2 = {
    * y el SlicePipe :nos ayuda a cortar un array o string
    */
 
-  imports: [CardComponent, I18nSelectPipe, I18nPluralPipe, SlicePipe, JsonPipe, UpperCasePipe, TitleCasePipe, KeyValuePipe, LowerCasePipe],
+  imports: [CardComponent, I18nSelectPipe, I18nPluralPipe, SlicePipe, JsonPipe, UpperCasePipe, TitleCasePipe, KeyValuePipe],
   templateUrl: './uncommon-page.html',
   changeDetection: ChangeDetectionStrategy.Eager,
 })
