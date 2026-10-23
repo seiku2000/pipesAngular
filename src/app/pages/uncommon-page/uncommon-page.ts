@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
 import { CardComponent } from "../../components/card.component/card.component";
-import { I18nPluralPipe, I18nSelectPipe, JsonPipe, KeyValuePipe, LowerCasePipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
+import { AsyncPipe, I18nPluralPipe, I18nSelectPipe, JsonPipe, KeyValuePipe, LowerCasePipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { initFlowbite } from 'flowbite';
 
 const client1 = {
@@ -29,7 +29,14 @@ const client2 = {
    * y el SlicePipe :nos ayuda a cortar un array o string
    */
 
-  imports: [CardComponent, I18nSelectPipe, I18nPluralPipe, SlicePipe, JsonPipe, UpperCasePipe, TitleCasePipe, KeyValuePipe],
+  /**
+   * jsonPIpe :nos ayuda a obtener un valor en formato json y es muy util para trabajar con objetos
+
+   * el pipeKeyValue permite iterar sobre las propiedades clave/valor de un objeto o array
+   * el pipeAsync muestra el valor de una promesa o observable
+   */
+
+  imports: [CardComponent, I18nSelectPipe, I18nPluralPipe, SlicePipe, JsonPipe, UpperCasePipe, TitleCasePipe, KeyValuePipe, AsyncPipe],
   templateUrl: './uncommon-page.html',
   changeDetection: ChangeDetectionStrategy.Eager,
 })
@@ -86,6 +93,16 @@ export default class UncommonPage implements OnInit {
     age: 22,
     email: 'samarth@gmail.com',
     addres: 'Gondia'
+  });
+
+
+
+  promisevalue: Promise<string> = new Promise((resolve, rejec) => {
+    setTimeout(() => {
+      //resolve('tenemos un valor resuelto');
+      rejec('tenemos un error');
+      console.log('llamada completada');
+    }, 3000);
   });
 
 

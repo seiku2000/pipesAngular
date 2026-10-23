@@ -86,4 +86,15 @@
 
     </app-card>
 
+    <app-card title="AsynPromise Pipe">
+        <p>{{promisevalue | async}}</p>
+
+        @if (promisevalue | async; as value) {
+        <p class="text-primary">{{value}}</p>
+        }@else {
+        <p class="text-warnings">El valor esta esperando</p>
+        }
+
+    </app-card>
+
 </div>
