@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/cor
 import { CardComponent } from "../../components/card.component/card.component";
 import { AsyncPipe, I18nPluralPipe, I18nSelectPipe, JsonPipe, KeyValuePipe, LowerCasePipe, SlicePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { initFlowbite } from 'flowbite';
+import { interval, tap } from 'rxjs';
 
 const client1 = {
   name: 'sma',
@@ -43,7 +44,7 @@ const client2 = {
 export default class UncommonPage implements OnInit {
 
   public client = signal(client1);
-
+  //
   ngOnInit(): void {
     initFlowbite()
   }
@@ -54,7 +55,7 @@ export default class UncommonPage implements OnInit {
     male: 'invitarlo',
     female: 'invitarla',
   }
-
+  //funcion que cambia el cliente
   public onChangedClient() {
     if (this.client() === client1) {
       this.client.set(client2);
@@ -65,7 +66,7 @@ export default class UncommonPage implements OnInit {
 
   }
 
-  //I18nPluralPipe plural
+  //I18nPluralPipe plural este pipe es para trabajar con diferentes cambios como pais ,genero etc
 
   public clients = signal([
     'maria',
@@ -79,7 +80,7 @@ export default class UncommonPage implements OnInit {
     'Marcos',
   ]);
 
-  //esta es para el plural 
+  //esta es para el plural  con el # se toma el valor de la propiedad que se va a evaluar
   public clientsMap = signal({
     '=0': 'en la fila de invitados',
     '=1': 'un invitado esperando',
@@ -96,11 +97,11 @@ export default class UncommonPage implements OnInit {
   });
 
 
-
+  //AsyncPipe muestra el valor de una promesa o observable
   promisevalue: Promise<string> = new Promise((resolve, rejec) => {
     setTimeout(() => {
-      //resolve('tenemos un valor resuelto');
-      rejec('tenemos un error');
+      resolve('tenemos un valor resuelto');
+      // rejec('tenemos un error');
       console.log('llamada completada');
     }, 3000);
   });
@@ -120,6 +121,13 @@ export default class UncommonPage implements OnInit {
     this.clients.update((prev) => prev.slice(1))
 
   }
+
+
+  myObservable = interval(2000).pipe(
+    tap((value) => {
+      console.log('mi observale, value:', value);
+    })
+  )
 
 
 }

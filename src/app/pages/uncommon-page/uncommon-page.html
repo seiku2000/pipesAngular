@@ -88,12 +88,23 @@
 
     <app-card title="AsynPromise Pipe">
         <p>{{promisevalue | async}}</p>
-
+        <!--El as es para asignar el valor de la promesa a una variable y poder utilizarlo en el if y else-->
         @if (promisevalue | async; as value) {
         <p class="text-primary">{{value}}</p>
         }@else {
-        <p class="text-warnings">El valor esta esperando</p>
+        <p class="text-warnings">El valor esta esperando</p>[]
         }
+
+        <h1>Observable</h1>
+        @if (myObservable | async; as value){
+        <p>{{value}}</p>
+        }@else {
+        <p>cargando valores...</p>
+        }
+
+    </app-card>
+    |
+    <app-card title="AsynPipe observable">
 
     </app-card>
 
